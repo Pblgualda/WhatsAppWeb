@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WhatsBuke</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">WhatsBuke</div>
+        <div class="sidebar-desc">Grupo chulo</div>
+      </div>
+      <section class="connected-panel">
+        <div class="panel-title">Usuarios conectados</div>
+        <ul id="userList" class="user-list"></ul>
+      </section>
+    </aside>
+
+    <main class="chat-panel">
+      <header class="chat-header">
+        <div class="chat-avatar">💬</div>
+        <div>
+          <h1>Sala común</h1>
+          <p id="chatSubtitle">Todos los usuarios pueden chatear aquí.</p>
+        </div>
+      </header>
+
+      <section id="chatWindow" class="chat-window">
+        <ul id="chatMessages" class="chat-messages"></ul>
+      </section>
+
+      <div id="typingIndicator" class="typing-indicator"></div>
+
+      <form id="messageForm" class="message-form">
+        <input id="inputTexto" placeholder="Escribe un mensaje..." autocomplete="off" />
+        <button type="submit">Enviar</button>
+      </form>
+    </main>
+  </div>
+
+  <div id="loginOverlay" class="overlay">
+    <div class="login-card">
+      <h2>Identifícate</h2>
+      <p>Pon tu nombre, estado y selecciona un avatar para entrar.</p>
+      <label>
+        Nombre
+        <input id="nameInput" placeholder="Tu nombre" autocomplete="off" />
+      </label>
+      <label>
+        Estado
+        <input id="statusInput" placeholder="Disponible" autocomplete="off" />
+      </label>
+      <div class="avatar-picker">
+        <div class="picker-title">Selecciona un avatar</div>
+        <div id="avatarOptions" class="avatar-options"></div>
+      </div>
+      <button id="startButton" class="start-button">Entrar al chat</button>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
